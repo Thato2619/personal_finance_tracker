@@ -30,3 +30,6 @@ def get_category():
     category = input("Enter the category ('I' for Income or 'E' for Expense): ").upper()
     if category in CATEGORIES:
         return CATEGORIES[category]
+
+def get_description():
+    return input("Enter a description (optional): ")
