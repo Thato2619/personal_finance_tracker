@@ -1,5 +1,6 @@
 from pydoc import describe
 from tkinter import W
+from unicodedata import category
 import pandas as pd
 import csv 
 from datetime import datetime
@@ -30,5 +31,10 @@ class CSV:
             writer.writerow(new_entry)
             print("Entry added successfully.")
 
-CSV.initialize_csv()
-CSV.add_entry("20-03-2025", 135.50, "Income", "Salary")
+def add():
+    CSV.initialize_csv()
+    date = get_date("Enter the date of the transaction (dd-mm-yyyy) or enter today's date: ", allow_default=True,)
+    amount = get_amount()
+    category = get_category()
+    description = get_description()
+    CSV.add_entry(date, amount, category, description)
