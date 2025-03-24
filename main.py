@@ -1,5 +1,4 @@
-from pydoc import describe
-from tkinter import W
+
 from unicodedata import category
 import pandas as pd
 import csv 
@@ -23,7 +22,7 @@ class CSV:
             "date":date,
             "amount": amount,
             "category": category,
-            "description": description
+            "description": description,
         }
         
         with open(cls.CSV_FILE, "a", newline="") as csvfile:
@@ -33,7 +32,7 @@ class CSV:
 
 def add():
     CSV.initialize_csv()
-    date = get_date("Enter the date of the transaction (dd-mm-yyyy) or enter today's date: ", allow_default=True,)
+    date = get_date("Enter the date of the transacrion (dd-mm-yyyy) or enter for today;s date: ", allow_default=True)
     amount = get_amount()
     category = get_category()
     description = get_description()
