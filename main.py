@@ -38,3 +38,5 @@ def add():
     category = get_category()
     description = get_description()
     CSV.add_entry(date, amount, category, description)
+
+add()
