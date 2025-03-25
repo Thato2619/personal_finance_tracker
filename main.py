@@ -10,6 +10,7 @@ class CSV:
 
     @classmethod
     def initialize_csv(cls):
+        """Creates the CSV file if it doesn't exist."""
         try:
             pd.read_csv(cls.CSV_FILE)
         except FileNotFoundError:
@@ -17,7 +18,13 @@ class CSV:
             df.to_csv(cls.CSV_FILE, index=False)
 
     @classmethod
-    def add_entry(cls, date, amount, category, description):
+    def add_entry(cls):
+        """Collects transaction details and adds a new entry."""
+        date = get_date("Enter the transaction date (dd-mm-yyyy) or press Enter for today: ", allow_default=True)
+        amount = get_amount()
+        category = get_category()
+        description = get_description()
+
         new_entry = {
             "date": date,
             "amount": amount,
@@ -28,21 +35,20 @@ class CSV:
         with open(cls.CSV_FILE, "a", newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=cls.COLUMNS)
             writer.writerow(new_entry)
-            print("Entry added successfully.")
+            print("\n✅ Transaction added successfully!\n")
 
     @classmethod
     def get_transactions(cls, start_date, end_date):
+        """Retrieves transactions within a user-specified date range and prints a summary."""
         try:
-            df = pd.read_csv(cls.CSV_FILE)  # Load CSV data
+            df = pd.read_csv(cls.CSV_FILE)
             if df.empty:
-                print("No transactions recorded yet.")
+                print("\n❌ No transactions recorded yet.\n")
                 return
 
-            # Convert date column to datetime
             df["date"] = pd.to_datetime(df["date"], format=cls.FORMAT, errors="coerce")
-            df["amount"] = pd.to_numeric(df["amount"], errors="coerce")  # Ensure numeric values
+            df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
 
-            # Convert input dates to datetime
             start_date = datetime.strptime(start_date, cls.FORMAT)
             end_date = datetime.strptime(end_date, cls.FORMAT)
 
@@ -60,16 +66,10 @@ class CSV:
 
             # ✅ Print transactions by category
             print("\n🔹 **Income Transactions** 🔹")
-            if income_df.empty:
-                print("No income transactions recorded.")
-            else:
-                print(income_df.to_string(index=False))
+            print(income_df.to_string(index=False) if not income_df.empty else "No income transactions recorded.")
 
             print("\n🔹 **Expense Transactions** 🔹")
-            if expense_df.empty:
-                print("No expense transactions recorded.")
-            else:
-                print(expense_df.to_string(index=False))
+            print(expense_df.to_string(index=False) if not expense_df.empty else "No expense transactions recorded.")
 
             # ✅ Calculate Summary for the Filtered Transactions
             total_income_filtered = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
@@ -81,7 +81,7 @@ class CSV:
 
             # ✅ Print Filtered Summary
             if not filtered_df.empty:
-                print(f"\n🔹 **Summary (Filtered Range: {start_date.strftime(cls.FORMAT)} to {end_date.strftime(cls.FORMAT)})** 🔹")
+                print(f"\n🔹 **Summary (Filtered: {start_date.strftime(cls.FORMAT)} - {end_date.strftime(cls.FORMAT)})** 🔹")
                 print(f"Total Income: ${total_income_filtered:.2f}")
                 print(f"Total Expense: ${total_expense_filtered:.2f}")
                 print(f"Net Savings: ${(total_income_filtered - total_expense_filtered):.2f}")
@@ -93,7 +93,31 @@ class CSV:
             print(f"Net Savings (All Time): ${(total_income_all - total_expense_all):.2f}")
 
         except FileNotFoundError:
-            print("No transaction data found. Please add transactions first.")
+            print("\n❌ No transaction data found. Please add transactions first.\n")
 
-# ✅ Run this to test
-CSV.get_transactions("01-02-2024", "20-02-2024")
+# ✅ Menu System
+def main():
+    CSV.initialize_csv()
+    
+    while True:
+        print("\n🔹 **Personal Finance Tracker** 🔹")
+        print("1️⃣ Add a Transaction")
+        print("2️⃣ View Transactions and Summary")
+        print("3️⃣ Exit")
+
+        choice = input("\nEnter your choice (1-3): ").strip()
+
+        if choice == "1":
+            CSV.add_entry()
+        elif choice == "2":
+            start_date = get_date("Enter start date (dd-mm-yyyy): ")
+            end_date = get_date("Enter end date (dd-mm-yyyy): ")
+            CSV.get_transactions(start_date, end_date)
+        elif choice == "3":
+            print("\n✅ Exiting... Have a great day!\n")
+            break
+        else:
+            print("\n❌ Invalid choice. Please enter a number between 1-3.\n")
+
+if __name__ == "__main__":
+    main()
