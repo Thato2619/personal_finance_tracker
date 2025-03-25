@@ -8,6 +8,7 @@ from data_entry import get_amount, get_category, get_description, get_date
 class CSV:
     CSV_FILE = "finance_data.csv"
     COLUMNS = ["date", "amount", "category" , "description"]
+    FORMAT = "%d-%m-%Y"
 
     @classmethod
     def initialize_csv(cls):
@@ -30,6 +31,10 @@ class CSV:
             writer.writerow(new_entry)
             print("Entry added successfully.")
 
+@classmethod
+def get_transactions(cls, start_date, end_date):
+    df = pd.read.csv(cls.CSV_FILE)
+    df["date"] = pd.to_datetime(df["date"], format=CSV.FORMAT)
 def add():
     CSV.initialize_csv()
     date = get_date("Enter the date of the transacrion (dd-mm-yyyy) or enter for today;s date: ", allow_default=True)
