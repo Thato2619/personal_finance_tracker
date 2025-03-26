@@ -1,5 +1,6 @@
 import pandas as pd
 import csv
+import matplotlib.pyplot as plt
 from datetime import datetime
 from data_entry import get_amount, get_category, get_description, get_date
 
@@ -39,12 +40,12 @@ class CSV:
 
     @classmethod
     def get_transactions(cls, start_date, end_date):
-        """Retrieves transactions within a user-specified date range and prints a summary."""
+        """Retrieves transactions, prints the summary, and returns a DataFrame."""
         try:
             df = pd.read_csv(cls.CSV_FILE)
             if df.empty:
                 print("\n❌ No transactions recorded yet.\n")
-                return
+                return pd.DataFrame()
 
             df["date"] = pd.to_datetime(df["date"], format=cls.FORMAT, errors="coerce")
             df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
@@ -52,65 +53,63 @@ class CSV:
             start_date = datetime.strptime(start_date, cls.FORMAT)
             end_date = datetime.strptime(end_date, cls.FORMAT)
 
-            # Apply filtering
+            # Filter transactions
             mask = (df["date"] >= start_date) & (df["date"] <= end_date)
             filtered_df = df.loc[mask]
 
-            # ✅ Print All Transactions Breakdown
-            print("\n🔹 **Transaction Breakdown (All Records)** 🔹\n")
-            print(df.to_string(index=False))
+            # ✅ Print transaction breakdown
+            print("\n🔹 **Transaction Breakdown (Filtered Range)** 🔹")
+            print(filtered_df.to_string(index=False) if not filtered_df.empty else "No transactions in this range.")
 
-            # ✅ Group transactions by category
-            income_df = df[df["category"] == "Income"]
-            expense_df = df[df["category"] == "Expense"]
+            # ✅ Summary calculations
+            total_income = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
+            total_expense = filtered_df[filtered_df["category"] == "Expense"]["amount"].sum()
+            net_savings = total_income - total_expense
 
-            # ✅ Print transactions by category
-            print("\n🔹 **Income Transactions** 🔹")
-            print(income_df.to_string(index=False) if not income_df.empty else "No income transactions recorded.")
+            # ✅ Print Summary
+            print("\n🔹 **Summary** 🔹")
+            print(f"Total Income: ${total_income:.2f}")
+            print(f"Total Expense: ${total_expense:.2f}")
+            print(f"Net Savings: ${net_savings:.2f}")
 
-            print("\n🔹 **Expense Transactions** 🔹")
-            print(expense_df.to_string(index=False) if not expense_df.empty else "No expense transactions recorded.")
-
-            # ✅ Calculate Summary for the Filtered Transactions
-            total_income_filtered = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
-            total_expense_filtered = filtered_df[filtered_df["category"] == "Expense"]["amount"].sum()
-
-            # ✅ Calculate Overall Summary (All Transactions)
-            total_income_all = df[df["category"] == "Income"]["amount"].sum()
-            total_expense_all = df[df["category"] == "Expense"]["amount"].sum()
-
-            # ✅ Print Filtered Summary
-            if not filtered_df.empty:
-                print(f"\n🔹 **Summary (Filtered: {start_date.strftime(cls.FORMAT)} - {end_date.strftime(cls.FORMAT)})** 🔹")
-                print(f"Total Income: ${total_income_filtered:.2f}")
-                print(f"Total Expense: ${total_expense_filtered:.2f}")
-                print(f"Net Savings: ${(total_income_filtered - total_expense_filtered):.2f}")
-
-            # ✅ Print Overall Summary
-            print("\n🔹 **Overall Summary (All Transactions)** 🔹")
-            print(f"Total Income (All Time): ${total_income_all:.2f}")
-            print(f"Total Expense (All Time): ${total_expense_all:.2f}")
-            print(f"Net Savings (All Time): ${(total_income_all - total_expense_all):.2f}")
+            return filtered_df  # ✅ Return filtered transactions for graphing
 
         except FileNotFoundError:
             print("\n❌ No transaction data found. Please add transactions first.\n")
-# ✅ create graph
+            return pd.DataFrame()
+
+# ✅ Create Graph
 def plot_transactions(df):
+    if df.empty:
+        print("\n❌ No transactions available for graph.\n")
+        return
+
     df.set_index("date", inplace=True)
 
     income_df = (
         df[df["category"] == "Income"]
-        .resample("D")
+        .resample("D")["amount"]
         .sum()
         .reindex(df.index, fill_value=0)
     )
 
     expense_df = (
         df[df["category"] == "Expense"]
-        .resample("D")
+        .resample("D")["amount"]
         .sum()
         .reindex(df.index, fill_value=0)
     )
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(income_df.index, income_df, label="Income", color="g")
+    plt.plot(expense_df.index, expense_df, label="Expense", color="r")
+    plt.xlabel("Date")
+    plt.ylabel("Amount")
+    plt.title("Income and Expenses Over Time")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
 # ✅ Menu System
 def main():
     CSV.initialize_csv()
@@ -128,7 +127,13 @@ def main():
         elif choice == "2":
             start_date = get_date("Enter start date (dd-mm-yyyy): ")
             end_date = get_date("Enter end date (dd-mm-yyyy): ")
-            CSV.get_transactions(start_date, end_date)
+            df = CSV.get_transactions(start_date, end_date)  # ✅ Print summary first
+
+            if not df.empty:
+                # ✅ Ask user if they want to see the graph
+                show_graph = input("\n📊 Do you want to see a graph? (yes/no): ").strip().lower()
+                if show_graph in ["yes", "y"]:
+                    plot_transactions(df)  # ✅ Show graph only if user says "yes"
         elif choice == "3":
             print("\n✅ Exiting... Have a great day!\n")
             break

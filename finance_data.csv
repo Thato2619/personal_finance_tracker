@@ -1,6 +1,190 @@
 date,amount,category,description
-20-03-2025,135.5,Income,Salary
-24-03-2025,45.0,Income,
-25-03-2025,89.0,Income,side gig
-25-03-2025,6000.0,Income,salary
-28-02-2025,240.0,Expense,nails
+03-03-2024,3389.21,Income,Gift received on 03-03-2024
+04-03-2024,396.12,Expense,Groceries expense on 04-03-2024
+05-03-2024,1660.03,Income,Salary received on 05-03-2024
+05-03-2024,385.0,Expense,Rent expense on 05-03-2024
+06-03-2024,221.65,Expense,Subscriptions expense on 06-03-2024
+07-03-2024,76.67,Expense,Rent expense on 07-03-2024
+08-03-2024,2622.57,Income,Gift received on 08-03-2024
+09-03-2024,290.96,Expense,Rent expense on 09-03-2024
+10-03-2024,454.49,Expense,Rent expense on 10-03-2024
+11-03-2024,3635.31,Income,Investments received on 11-03-2024
+11-03-2024,264.7,Expense,Entertainment expense on 11-03-2024
+12-03-2024,3107.98,Income,Salary received on 12-03-2024
+13-03-2024,4756.1,Income,Investments received on 13-03-2024
+13-03-2024,163.37,Expense,Entertainment expense on 13-03-2024
+14-03-2024,135.56,Expense,Dining Out expense on 14-03-2024
+15-03-2024,4804.28,Income,Gift received on 15-03-2024
+15-03-2024,441.51,Expense,Shopping expense on 15-03-2024
+16-03-2024,300.71,Expense,Dining Out expense on 16-03-2024
+17-03-2024,3132.79,Income,Freelance received on 17-03-2024
+17-03-2024,371.87,Expense,Shopping expense on 17-03-2024
+19-03-2024,292.92,Expense,Dining Out expense on 19-03-2024
+20-03-2024,2927.57,Income,Gift received on 20-03-2024
+20-03-2024,212.98,Expense,Subscriptions expense on 20-03-2024
+21-03-2024,860.61,Income,Gift received on 21-03-2024
+21-03-2024,126.97,Expense,Entertainment expense on 21-03-2024
+22-03-2024,404.07,Expense,Rent expense on 22-03-2024
+23-03-2024,468.53,Expense,Entertainment expense on 23-03-2024
+25-03-2024,311.87,Expense,Entertainment expense on 25-03-2024
+27-03-2024,4137.07,Income,Freelance received on 27-03-2024
+27-03-2024,46.41,Expense,Transport expense on 27-03-2024
+28-03-2024,918.53,Income,Bonus received on 28-03-2024
+28-03-2024,343.08,Expense,Entertainment expense on 28-03-2024
+30-03-2024,1172.38,Income,Salary received on 30-03-2024
+31-03-2024,1573.29,Income,Gift received on 31-03-2024
+31-03-2024,422.21,Expense,Rent expense on 31-03-2024
+01-04-2024,210.93,Expense,Dining Out expense on 01-04-2024
+02-04-2024,2806.59,Income,Freelance received on 02-04-2024
+02-04-2024,321.6,Expense,Subscriptions expense on 02-04-2024
+04-04-2024,22.11,Expense,Dining Out expense on 04-04-2024
+05-04-2024,971.19,Income,Gift received on 05-04-2024
+05-04-2024,216.33,Expense,Shopping expense on 05-04-2024
+06-04-2024,66.43,Expense,Subscriptions expense on 06-04-2024
+09-04-2024,3547.96,Income,Freelance received on 09-04-2024
+09-04-2024,127.38,Expense,Transport expense on 09-04-2024
+10-04-2024,345.75,Expense,Shopping expense on 10-04-2024
+11-04-2024,4246.68,Income,Salary received on 11-04-2024
+12-04-2024,57.19,Expense,Transport expense on 12-04-2024
+13-04-2024,3003.41,Income,Bonus received on 13-04-2024
+13-04-2024,321.23,Expense,Transport expense on 13-04-2024
+15-04-2024,1044.28,Income,Bonus received on 15-04-2024
+15-04-2024,138.38,Expense,Entertainment expense on 15-04-2024
+17-04-2024,583.49,Income,Bonus received on 17-04-2024
+17-04-2024,291.58,Expense,Groceries expense on 17-04-2024
+18-04-2024,356.28,Expense,Shopping expense on 18-04-2024
+19-04-2024,2668.96,Income,Freelance received on 19-04-2024
+19-04-2024,235.26,Expense,Groceries expense on 19-04-2024
+21-04-2024,2203.51,Income,Investments received on 21-04-2024
+21-04-2024,101.45,Expense,Dining Out expense on 21-04-2024
+22-04-2024,4941.76,Income,Investments received on 22-04-2024
+22-04-2024,126.1,Expense,Groceries expense on 22-04-2024
+23-04-2024,4491.85,Income,Investments received on 23-04-2024
+24-04-2024,208.34,Expense,Groceries expense on 24-04-2024
+26-04-2024,3319.11,Income,Investments received on 26-04-2024
+26-04-2024,130.24,Expense,Entertainment expense on 26-04-2024
+27-04-2024,1394.64,Income,Investments received on 27-04-2024
+28-04-2024,2822.2,Income,Salary received on 28-04-2024
+29-04-2024,4518.61,Income,Salary received on 29-04-2024
+29-04-2024,173.89,Expense,Dining Out expense on 29-04-2024
+30-04-2024,409.98,Expense,Groceries expense on 30-04-2024
+01-05-2024,3780.89,Income,Bonus received on 01-05-2024
+01-05-2024,105.68,Expense,Shopping expense on 01-05-2024
+02-05-2024,418.29,Expense,Transport expense on 02-05-2024
+03-05-2024,412.62,Expense,Groceries expense on 03-05-2024
+04-05-2024,2128.45,Income,Gift received on 04-05-2024
+05-05-2024,3807.12,Income,Salary received on 05-05-2024
+05-05-2024,428.54,Expense,Groceries expense on 05-05-2024
+06-05-2024,4138.3,Income,Bonus received on 06-05-2024
+06-05-2024,258.87,Expense,Groceries expense on 06-05-2024
+07-05-2024,1453.19,Income,Bonus received on 07-05-2024
+07-05-2024,262.31,Expense,Rent expense on 07-05-2024
+08-05-2024,1378.81,Income,Investments received on 08-05-2024
+08-05-2024,435.34,Expense,Entertainment expense on 08-05-2024
+11-05-2024,11.47,Expense,Subscriptions expense on 11-05-2024
+12-05-2024,155.86,Expense,Subscriptions expense on 12-05-2024
+13-05-2024,1936.44,Income,Salary received on 13-05-2024
+14-05-2024,660.38,Income,Investments received on 14-05-2024
+15-05-2024,272.73,Expense,Groceries expense on 15-05-2024
+16-05-2024,1067.41,Income,Gift received on 16-05-2024
+16-05-2024,310.21,Expense,Dining Out expense on 16-05-2024
+17-05-2024,17.05,Expense,Rent expense on 17-05-2024
+18-05-2024,2881.13,Income,Salary received on 18-05-2024
+18-05-2024,231.78,Expense,Groceries expense on 18-05-2024
+19-05-2024,302.42,Expense,Dining Out expense on 19-05-2024
+20-05-2024,263.35,Expense,Subscriptions expense on 20-05-2024
+22-05-2024,467.52,Expense,Groceries expense on 22-05-2024
+23-05-2024,1194.53,Income,Freelance received on 23-05-2024
+23-05-2024,238.38,Expense,Groceries expense on 23-05-2024
+24-05-2024,78.26,Expense,Dining Out expense on 24-05-2024
+25-05-2024,2415.11,Income,Bonus received on 25-05-2024
+26-05-2024,4710.81,Income,Freelance received on 26-05-2024
+26-05-2024,134.79,Expense,Shopping expense on 26-05-2024
+27-05-2024,11.87,Expense,Rent expense on 27-05-2024
+28-05-2024,4817.45,Income,Freelance received on 28-05-2024
+28-05-2024,183.27,Expense,Dining Out expense on 28-05-2024
+29-05-2024,208.6,Expense,Subscriptions expense on 29-05-2024
+30-05-2024,426.08,Expense,Groceries expense on 30-05-2024
+31-05-2024,387.56,Expense,Shopping expense on 31-05-2024
+01-06-2024,3628.79,Income,Investments received on 01-06-2024
+03-06-2024,3402.31,Income,Salary received on 03-06-2024
+03-06-2024,314.72,Expense,Subscriptions expense on 03-06-2024
+05-06-2024,2759.23,Income,Freelance received on 05-06-2024
+05-06-2024,271.34,Expense,Transport expense on 05-06-2024
+06-06-2024,4254.15,Income,Freelance received on 06-06-2024
+06-06-2024,270.13,Expense,Dining Out expense on 06-06-2024
+07-06-2024,4300.16,Income,Gift received on 07-06-2024
+08-06-2024,1661.83,Income,Investments received on 08-06-2024
+08-06-2024,382.17,Expense,Dining Out expense on 08-06-2024
+09-06-2024,449.01,Expense,Subscriptions expense on 09-06-2024
+11-06-2024,4028.48,Income,Freelance received on 11-06-2024
+13-06-2024,226.85,Expense,Subscriptions expense on 13-06-2024
+15-06-2024,4577.14,Income,Freelance received on 15-06-2024
+15-06-2024,61.52,Expense,Subscriptions expense on 15-06-2024
+16-06-2024,1800.88,Income,Bonus received on 16-06-2024
+16-06-2024,387.09,Expense,Transport expense on 16-06-2024
+17-06-2024,904.94,Income,Salary received on 17-06-2024
+17-06-2024,398.08,Expense,Groceries expense on 17-06-2024
+18-06-2024,3448.26,Income,Salary received on 18-06-2024
+18-06-2024,128.29,Expense,Shopping expense on 18-06-2024
+19-06-2024,1709.98,Income,Freelance received on 19-06-2024
+20-06-2024,447.65,Expense,Rent expense on 20-06-2024
+21-06-2024,178.64,Expense,Groceries expense on 21-06-2024
+22-06-2024,162.84,Expense,Shopping expense on 22-06-2024
+23-06-2024,3939.43,Income,Salary received on 23-06-2024
+23-06-2024,396.28,Expense,Entertainment expense on 23-06-2024
+24-06-2024,460.18,Expense,Subscriptions expense on 24-06-2024
+25-06-2024,305.64,Expense,Dining Out expense on 25-06-2024
+27-06-2024,3032.32,Income,Bonus received on 27-06-2024
+28-06-2024,1226.53,Income,Salary received on 28-06-2024
+29-06-2024,4853.97,Income,Bonus received on 29-06-2024
+30-06-2024,316.21,Expense,Entertainment expense on 30-06-2024
+01-07-2024,2166.53,Income,Gift received on 01-07-2024
+02-07-2024,22.79,Expense,Entertainment expense on 02-07-2024
+03-07-2024,1608.86,Income,Gift received on 03-07-2024
+03-07-2024,429.2,Expense,Entertainment expense on 03-07-2024
+05-07-2024,3910.82,Income,Investments received on 05-07-2024
+05-07-2024,232.28,Expense,Groceries expense on 05-07-2024
+06-07-2024,2312.87,Income,Investments received on 06-07-2024
+06-07-2024,100.62,Expense,Dining Out expense on 06-07-2024
+07-07-2024,593.84,Income,Freelance received on 07-07-2024
+07-07-2024,240.26,Expense,Subscriptions expense on 07-07-2024
+08-07-2024,213.99,Expense,Shopping expense on 08-07-2024
+09-07-2024,2538.92,Income,Freelance received on 09-07-2024
+09-07-2024,436.75,Expense,Dining Out expense on 09-07-2024
+10-07-2024,118.89,Expense,Subscriptions expense on 10-07-2024
+11-07-2024,2671.16,Income,Investments received on 11-07-2024
+12-07-2024,4566.3,Income,Freelance received on 12-07-2024
+12-07-2024,178.19,Expense,Subscriptions expense on 12-07-2024
+13-07-2024,168.55,Expense,Groceries expense on 13-07-2024
+14-07-2024,107.26,Expense,Subscriptions expense on 14-07-2024
+16-07-2024,109.63,Expense,Dining Out expense on 16-07-2024
+17-07-2024,348.54,Expense,Dining Out expense on 17-07-2024
+18-07-2024,246.18,Expense,Entertainment expense on 18-07-2024
+19-07-2024,3686.05,Income,Bonus received on 19-07-2024
+19-07-2024,184.01,Expense,Transport expense on 19-07-2024
+20-07-2024,140.77,Expense,Subscriptions expense on 20-07-2024
+21-07-2024,122.19,Expense,Entertainment expense on 21-07-2024
+22-07-2024,4845.31,Income,Gift received on 22-07-2024
+23-07-2024,2427.46,Income,Freelance received on 23-07-2024
+23-07-2024,241.33,Expense,Dining Out expense on 23-07-2024
+24-07-2024,227.58,Expense,Groceries expense on 24-07-2024
+26-07-2024,298.17,Expense,Rent expense on 26-07-2024
+27-07-2024,2276.27,Income,Gift received on 27-07-2024
+28-07-2024,4735.32,Income,Gift received on 28-07-2024
+28-07-2024,88.81,Expense,Groceries expense on 28-07-2024
+29-07-2024,180.9,Expense,Entertainment expense on 29-07-2024
+30-07-2024,1625.12,Income,Bonus received on 30-07-2024
+31-07-2024,4922.36,Income,Bonus received on 31-07-2024
+31-07-2024,315.73,Expense,Entertainment expense on 31-07-2024
+01-08-2024,2341.27,Income,Bonus received on 01-08-2024
+01-08-2024,168.78,Expense,Shopping expense on 01-08-2024
+02-08-2024,384.67,Expense,Subscriptions expense on 02-08-2024
+03-08-2024,18.29,Expense,Groceries expense on 03-08-2024
+04-08-2024,1416.64,Income,Bonus received on 04-08-2024
+04-08-2024,228.82,Expense,Rent expense on 04-08-2024
+05-08-2024,2338.74,Income,Salary received on 05-08-2024
+05-08-2024,347.0,Expense,Shopping expense on 05-08-2024
+06-08-2024,91.96,Expense,Groceries expense on 06-08-2024
+07-08-2024,2156.56,Income,Freelance received on 07-08-2024
+08-08-2024,120.97,Expense,Groceries expense on 08-08-2024
