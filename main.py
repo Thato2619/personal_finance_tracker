@@ -94,7 +94,23 @@ class CSV:
 
         except FileNotFoundError:
             print("\n❌ No transaction data found. Please add transactions first.\n")
+# ✅ create graph
+def plot_transactions(df):
+    df.set_index("date", inplace=True)
 
+    income_df = (
+        df[df["category"] == "Income"]
+        .resample("D")
+        .sum()
+        .reindex(df.index, fill_value=0)
+    )
+
+    expense_df = (
+        df[df["category"] == "Expense"]
+        .resample("D")
+        .sum()
+        .reindex(df.index, fill_value=0)
+    )
 # ✅ Menu System
 def main():
     CSV.initialize_csv()
